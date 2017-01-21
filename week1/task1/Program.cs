@@ -8,26 +8,25 @@ namespace task1
 {
     class Program
     {
-       bool IsPrime(int x)
+      static bool IsPrime(string a)
         {
+            int x = int.Parse(a);
             int count = 0;
             for (int i=1; i<=x; i++)
             {
                 if (x % i == 0)
                     count = count + 1;
             }
-            if (count > 2)
-                return false;
-            else
+            if (count == 2)
                 return true;
+            else
+                return false;
         }
         static void Main(string[] args)
         {
-            int a;
             for (int i = 0; i < args.Length; i++)
             {
-                 a = int.Parse(args[i]);
-                if (IsPrime(a) == true)
+                if (IsPrime(args[i]))
                     Console.WriteLine(args[i]);
             }
             Console.ReadKey();
